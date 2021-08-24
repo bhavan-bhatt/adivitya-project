@@ -4,73 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heart Disease</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <form action="/predict" method="POST">
+    <form action="/predict" method="POST" class="main-form">
+    <ul>
+        <li>
         <label>Age: </label>
         <input type="number" placeholder="Enter your age" id="age" name="age">
+        </li>
         <br>
+        <li>
         <span>Gender</span>
         <select name="sex" value="sex">
             <option value="1">Male</option>
             <option value="0">Female</option>
-        </select><br>
+        </select>
+        </li>
+        <br>
+        <li>
         <span>Enter Chest Pain Type</span>
         <select name="cp" id="cp">
-            <option value="0">1</option>
-            <option value="1">2</option>
-            <option value="2">3</option>
-            <option value="3">4</option>
-        </select><br>
+            <option value="0">Typical Angina</option>
+            <option value="1">Atypical Angina</option>
+            <option value="2">Non-anginal Pain</option>
+            <option value="3">Asymptomatic</option>
+        </select>
+        </li>
+        <br>
+        <li>
         <label>Enter your resting Blood Pressure in mm/Hg</label>
         <input type="text" placeholder="Enter your blood pressure" id="trestbps" name="trestbps">
+        </li>
         <br>
+        <li>
         <label>Enter your serum Cholrestrol in mg/dl</label>
         <input type="text" placeholder="Enter your Cholrestrol" id="chol" name="chol">
+        </li>
         <br>
+        <li>
         <span>Is your fasting blood sugar greater than 120 mg/dl</span>
         <select name="fbs" id="fbs">
             <option value="1">Yes</option>
             <option value="0">No</option>
-        </select><br>
+        </select>
+        </li>
+        <br>
+        <li>
         <span>Enter Resting electrocardiographic results</span>
         <select name="restecg" id="restecg">
             <option value="0">1</option>
             <option value="1">2</option>
             <option value="2">3</option>
-        </select><br>
+        </select>
+        </li>
+        <br>
+        <li>
         <label>Maximum heart rate achieved</label>
         <input type="number" placeholder="" name="thalach" id="thalach">
+        </li>
         <br>
+        <li>
         <span>Exercise induced angina</span>
         <select name="exang" id="exang">
             <option value="1">Yes</option>
             <option value="0">No</option>
-        </select><br>
+        </select>
+        </li>
+        <br>
+        <li>
         <label>ST depression induced by exercise relative to rest</label>
         <input type="text" placeholder="" name="oldpeak" id="oldpeak">
+        </li>
         <br>
+        <li>
         <span>The slope of the peak exercise ST segment</span>
         <select name="slope" is="slope">
             <option value="0">1</option>
             <option value="1">2</option>
             <option value="2">3</option>
-        </select><br>
+        </select>
+        </li>
+        <br>
+        <li>
         <span>Number of major vessels (0-3) colored by flourosopy</span>
         <select name="ca" id="ca">
-            <option value="0">1</option>
-            <option value="1">2</option>
-            <option value="2">3</option>
-            <option value="3">4</option>
-        </select><br>
-        <span>Thal</span>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        </li>
+        <br>
+        <li>
+        <span>Thalassemia defect</span>
         <select name="thal" id="thal">
-            <option value="0">1</option>
-            <option value="1">2</option>
-            <option value="2">3</option>
-        </select><br>
+            <option value="0">Fixed defect</option>
+            <option value="1">Reversible defect</option>
+            <option value="2">Normal</option>
+        </select>
+        </li><br>
+        <li>
         <input type="submit" value="Submit">
+        </li>
+    </ul>
     </form>
     
     {{ prediction_text }}

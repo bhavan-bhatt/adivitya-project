@@ -56,8 +56,13 @@ def predict():
         ]])
 
         output=prediction
+        if(output==1):
+            return render_template("home.html",prediction_text="You are diagnosed with Heart Disease")
+        elif(output==0):
+            return render_template("home.html",predicition_text="No you are not diagnosed with Heart Disease")
 
-        return render_template("home.html",prediction_text="Your Flight price is Rs. {}".format(output))
+
+       # return render_template("home.html",prediction_text="Your Flight price is Rs. {}".format(output))
 
 
     return render_template("home.html")
