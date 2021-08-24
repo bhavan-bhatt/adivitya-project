@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <form action="/predict" method="POST">
+        <label>Age: </label>
+        <input type="number" placeholder="Enter your age" id="age" name="age">
+        <br>
+        <span>Gender</span>
+        <select name="sex" value="sex">
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select><br>
+        <span>Enter Chest Pain Type</span>
+        <select name="cp" id="cp">
+            <option value="0">1</option>
+            <option value="1">2</option>
+            <option value="2">3</option>
+            <option value="3">4</option>
+        </select><br>
+        <label>Enter your resting Blood Pressure in mm/Hg</label>
+        <input type="text" placeholder="Enter your blood pressure" id="trestbps" name="trestbps">
+        <br>
+        <label>Enter your serum Cholrestrol in mg/dl</label>
+        <input type="text" placeholder="Enter your Cholrestrol" id="chol" name="chol">
+        <br>
+        <span>Is your fasting blood sugar greater than 120 mg/dl</span>
+        <select name="fbs" id="fbs">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+        <span>Enter Resting electrocardiographic results</span>
+        <select name="restecg" id="restecg">
+            <option value="0">1</option>
+            <option value="1">2</option>
+            <option value="2">3</option>
+        </select><br>
+        <label>Maximum heart rate achieved</label>
+        <input type="number" placeholder="" name="thalach" id="thalach">
+        <br>
+        <span>Exercise induced angina</span>
+        <select name="exang" id="exang">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+        <label>ST depression induced by exercise relative to rest</label>
+        <input type="text" placeholder="" name="oldpeak" id="oldpeak">
+        <br>
+        <span>The slope of the peak exercise ST segment</span>
+        <select name="slope" is="slope">
+            <option value="0">1</option>
+            <option value="1">2</option>
+            <option value="2">3</option>
+        </select><br>
+        <span>Number of major vessels (0-3) colored by flourosopy</span>
+        <select name="ca" id="ca">
+            <option value="0">1</option>
+            <option value="1">2</option>
+            <option value="2">3</option>
+            <option value="3">4</option>
+        </select><br>
+        <span>Thal</span>
+        <select name="thal" id="thal">
+            <option value="0">1</option>
+            <option value="1">2</option>
+            <option value="2">3</option>
+        </select><br>
+        <input type="submit" value="Submit">
+    </form>
+    
+    {{ prediction_text }}
+
+    
+</body>
+</html>
